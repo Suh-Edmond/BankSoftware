@@ -71,8 +71,6 @@ const user = reactive({
 const { loginUser } = useAuthentication();
 
 const login = async () => {
-    await loginUser(user).then((res) => {
-      console.log(res);
-    });
+    const res = await loginUser(user);
 };
 </script>

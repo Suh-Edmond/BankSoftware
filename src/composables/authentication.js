@@ -8,7 +8,9 @@ export default function useAuthentication() {
 
     const loginUser = async (data) => {
         try {
-            const response = await axios.post(API_BASE_URL + "/api/public/auth/login", data);
+            const response = await axios.post(`${API_BASE_URL}/api/public/auth/login`, data);
+            localStorage.setItem( "data", JSON.stringify(response.data.data))
+            router.push({name:'dashboard.view'})
             return response;
         } catch (error) {
             return error.response
@@ -17,7 +19,7 @@ export default function useAuthentication() {
 
     const registerUser = async (data) => {
         try {
-            const response = await axios.post(API_BASE_URL + "/api/public/auth/register", data);
+            const response = await axios.post(`${API_BASE_URL}/api/public/auth/register`, data);
             router.push({name:"login.view"});
             return response;
         } catch (error) {

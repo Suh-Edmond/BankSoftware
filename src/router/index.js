@@ -23,6 +23,42 @@ const router = createRouter({
       ]
     },
     {
+      path:'/dashboard',
+      children:[
+        {
+          path: '',
+          name:'dashboard.view',
+          component: () => import('../views/Dashboard/Dashboard.vue'),
+        },
+        {
+          path:'/accounts/create',
+          component: () => import('../views/Dashboard/CreateAccount.vue'),
+          name:'create_account.view'
+        },
+        {
+          path:'accounts/:id/transactions',
+          component: () => import('../views/Dashboard/Transactions.vue'),
+          name:'transactions.view'
+        },
+        {
+          path:'accounts/:id/transactions',
+          component: () => import('../views/Dashboard/Transactions.vue'),
+          name:'transactions.view'
+        },
+        {
+          path:'accounts/:id/details',
+          component: () => import('../views/Dashboard/AccountDetail.vue'),
+          name:'account_detail.view'
+        },
+        {
+          path:'accounts/:id/balance',
+          component: () => import('../views/Dashboard/AccountBalance.vue'),
+          name:'account_balance.view'
+        },
+        
+      ]
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
