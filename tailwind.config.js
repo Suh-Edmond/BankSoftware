@@ -5,7 +5,6 @@ const colors = require("tailwindcss/colors");
 export default {
   content: [],
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  darkMode: false,
   theme: {
     positions: {
       bottom: "bottom",
@@ -59,5 +58,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 };
